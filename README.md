@@ -1,1 +1,1 @@
-# Creating-a-QR-Code-Generator
+The QR Code generator project allows users to input text, URLs, or other data, which will then be converted into a QR code image. This project can be implemented using various programming languages, such as Python, JavaScript, or any other language that supports image processing and manipulation.
