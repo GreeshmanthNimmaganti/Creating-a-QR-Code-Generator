@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #333333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px #0000001a;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .qrcode {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <hr />
+        <div class="qrcode"></div>
+        <input type="text" placeholder="Enter a URL" onchange="generateQr()" />
+    </div>
+    <script>
+        let qrcode = new QRCode(document.querySelector(".qrcode"));
+        
+        qrcode.makeCode("Why did you scan me?");
+        
+        function generateQr() {
+            if (
+                document.querySelector("input").value === "" ||
+                document.querySelector("input").value === " ") {
+                alert("Input Field Is Empty");
+            }
+            else {
+                qrcode.makeCode(document.querySelector("input").value);
+            }
+        }
+    </script>
+</body>
+</html>
